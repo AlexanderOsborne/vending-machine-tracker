@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe '', type: :feature do
-  describe 'As a visitor' do
+RSpec.describe 'As a visitor', type: :feature do
+  describe 'When I visit the show page' do
 
     it 'I see a list of all snacks associated with a machine' do
       dane = Owner.create!(name: 'Dane')
