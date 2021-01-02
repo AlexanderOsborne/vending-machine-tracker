@@ -16,13 +16,16 @@ RSpec.describe 'As a visitor', type: :feature do
       MachineSnack.create!(snack_id: bonz.id, machine_id: ozzys.id)
 
       visit "/snacks/#{kibble.id}"
+      # require 'pry'; binding.pry
 
+      expect(page).to have_content(kibble.name)
       expect(page).to have_content(3.00)
-      expect(page).to have_content([Danes, Alexs])
-      expect(page).to have_content([2.50])
-      expect(page).to have_content([3.00])
-      expect(page).to have_content([2])
-      expect(page).to have_content([1])
+      expect(page).to have_content(ozzys.location)
+      expect(page).to have_content(croixs.location)
+      expect(page).to have_content(2.50)
+      expect(page).to have_content(3)
+      expect(page).to have_content(2)
+      expect(page).to have_content(1)
     end
   end
 end
